@@ -7,6 +7,16 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const config = require("./DB.js");
 
+mongoose.Promise = global.Promise;
+mongoose.connect(config.DB, { useNewUrlParser: true }).then(
+  () => {
+    console.log("Database is connected");
+  },
+  err => {
+    console.log("Can not connect ot the database" + err);
+  }
+);
+
 const serverRoutes = require("./server-routes");
 
 //use section
