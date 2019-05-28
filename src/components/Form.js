@@ -7,19 +7,11 @@ class Form extends Component {
         <form>
           <div class="form-group">
             <label>Username</label>
-            <input
-              type="email"
-              class="form-control"
-              placeholder="Enter email"
-            />
+            <input type="text" class="form-control" placeholder="username" />
           </div>
           <div class="form-group">
-            <label>Password</label>
-            <input
-              type="password"
-              class="form-control"
-              placeholder="Password"
-            />
+            <label>Comment</label>
+            <input type="password" class="form-control" placeholder="Comment" />
           </div>
 
           <button type="submit" class="btn btn-block btn-primary mt-5 mb-5">

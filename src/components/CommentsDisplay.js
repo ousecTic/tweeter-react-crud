@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 
 class CommentsDisplay extends Component {
+  state = {};
+
   render() {
     return (
       <div style={{ background: "#fff" }} class="jumbotron jumbotron-fluid">
