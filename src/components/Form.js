@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 class Form extends Component {
   state = {
@@ -8,7 +9,7 @@ class Form extends Component {
 
   onChangeUsername = e => {
     this.setState({
-      username: e.target.value
+      name: e.target.value
     });
   };
 
@@ -18,30 +19,48 @@ class Form extends Component {
     });
   };
 
+  onSubmit = async e => {
+    e.preventDefault();
+    const obj = {
+      name: this.state.name,
+      comment: this.state.comment
+    };
+    await axios
+      .post("http://localhost:8080/comment/add", obj)
+      .then(res => console.log(res.data));
+
+    this.props.getdata();
+
+    this.setState({
+      name: "",
+      comment: ""
+    });
+  };
+
   render() {
     return (
       <div className="container">
-        <form>
-          <div class="form-group">
+        <form onSubmit={this.onSubmit}>
+          <div className="form-group">
             <label>Username</label>
             <input
               type="text"
-              class="form-control"
-              value={this.state.username}
+              className="form-control"
+              value={this.state.name}
               onChange={this.onChangeUsername}
             />
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <label>Comment</label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               value={this.state.comment}
               onChange={this.onChangeComment}
             />
           </div>
 
-          <button type="submit" class="btn btn-block btn-primary mt-5 mb-5">
+          <button type="submit" className="btn btn-block btn-primary mt-5 mb-5">
             Submit
           </button>
         </form>

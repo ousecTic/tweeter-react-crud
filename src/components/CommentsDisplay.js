@@ -6,7 +6,7 @@ class CommentsDisplay extends Component {
 
   render() {
     return (
-      <div style={{ background: "#fff" }} class="jumbotron jumbotron-fluid">
+      <div style={{ background: "#fff" }} className="jumbotron jumbotron-fluid">
         <div className="container">
           <h1 className="display-3 text-center">Comment Section</h1>
           <p className="lead text-center mt-5 mb-5">
@@ -14,6 +14,7 @@ class CommentsDisplay extends Component {
             other
           </p>
         </div>
+        <Comment />
       </div>
     );
   }
