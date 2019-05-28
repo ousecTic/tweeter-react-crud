@@ -14,4 +14,19 @@ router.route("/").get((req, res) => {
   });
 });
 
+//defined post data route
+router.route("/add").post((req, res) => {
+  const comment = new Comment(req.body);
+  comment
+    .save()
+    .then(business => {
+      res
+        .status(200)
+        .json({ Comment: "Comment was successfully added to database" });
+    })
+    .catch(err => {
+      res.status(400).send("unable to save to database");
+    });
+});
+
 module.exports = router;
