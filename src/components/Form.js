@@ -22,7 +22,7 @@ class Form extends Component {
             />
           </div>
 
-          <button type="submit" class="btn btn-block btn-primary mt-5">
+          <button type="submit" class="btn btn-block btn-primary mt-5 mb-5">
             Submit
           </button>
         </form>
